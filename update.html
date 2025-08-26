@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Update Task - Task Master{% endblock %}
+
+{% block body %}
+<div class="task-form">
+    <h3>Update Task</h3>
+    <form action="/update/{{ task.id }}" method="POST">
+        <div class="form-row">
+            <input type="text" name="content" id="content" value="{{ task.content }}" required>
+            <input type="submit" value="Update Task" class="btn btn-primary">
+        </div>
+    </form>
+</div>
+
+<div class="info-box">
+    <strong>Note:</strong> Make your changes above and click "Update Task" to save. The modification will preserve the original creation date.
+</div>
+
+<div class="back-link">
+    <a href="/" class="btn btn-secondary">← Back to Task List</a>
+</div>
+{% endblock %}
